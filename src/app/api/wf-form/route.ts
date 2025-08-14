@@ -6,7 +6,7 @@ const CLICKUP_LIST_ID = process.env.CLICKUP_LIST_ID!;
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { Name, Email, Comment } = body;
+    const { Name, Email, Comment } = body as { Name: string; Email: string; Comment: string };
 
     if (!Name || !Email || !Comment) {
       return NextResponse.json(
