@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (!clickupResponse.ok) {
       const errorBody = await clickupResponse.text(); // Grab error body for logging
       console.error('ClickUp API Error:', errorBody);
-      return res.status(500).json({ message: 'Error creating task in ClickUp' });
+      return res.status(500).json({ message: 'Error creating task' });
     }
 
     return res.status(200).json({ message: 'Task created successfully' });
