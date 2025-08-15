@@ -143,6 +143,22 @@ export function Nav({
               >
                 {"About"}
               </_Builtin.NavbarLink>
+              <_Builtin.NavbarLink
+                className={_utils.cx(_styles, "nav-link", _activeStyleVariant)}
+                options={{
+                  href: "#",
+                }}
+              >
+                {"Feedback"}
+              </_Builtin.NavbarLink>
+              <_Builtin.NavbarLink
+                className={_utils.cx(_styles, "nav-link", _activeStyleVariant)}
+                options={{
+                  href: "/app",
+                }}
+              >
+                {"Login"}
+              </_Builtin.NavbarLink>
               <_Builtin.DropdownWrapper
                 className={_utils.cx(
                   _styles,
