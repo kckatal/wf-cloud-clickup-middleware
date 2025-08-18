@@ -3,6 +3,12 @@ import { NextRequest, NextResponse } from 'next/server';
 const CLICKUP_API_TOKEN = process.env.CLICKUP_API_TOKEN!;
 const CLICKUP_LIST_ID = process.env.CLICKUP_LIST_ID!;
 
+type SimpleFormBody = {
+  name?: unknown;
+  email?: unknown;
+  message?: unknown;
+};
+
 function createCorsResponse(body: any, init?: ResponseInit) {
   const res = NextResponse.json(body, init);
   res.headers.set('Access-Control-Allow-Origin', '*');
@@ -23,10 +29,10 @@ export async function POST(request: NextRequest) {
       return createCorsResponse({ message: 'Content-Type must be application/json' }, { status: 415 });
     }
 
-    const body = await request.json();
-    const nameRaw = (body?.name ?? '').toString();
-    const emailRaw = (body?.email ?? '').toString();
-    const messageRaw = (body?.message ?? '').toString();
+    const body = (await request.json()) as SimpleFormBody;
+    const nameRaw = String(body?.name ?? '');
+    const emailRaw = String(body?.email ?? '');
+    const messageRaw = String(body?.message ?? '');
 
     const name = nameRaw.trim();
     const email = emailRaw.trim().toLowerCase();
