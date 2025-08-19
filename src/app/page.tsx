@@ -24,7 +24,7 @@ export default function Home() {
           className="hero-split"
           style={{
             textAlign: "center",
-            maxWidth: "600px",
+            maxWidth: "650px",
             margin: "0 auto",
           }}
         >
