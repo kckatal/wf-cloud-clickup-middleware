@@ -5,6 +5,7 @@ const CLICKUP_API_TOKEN = process.env.CLICKUP_API_TOKEN!;
 const CLICKUP_LIST_ID = process.env.CLICKUP_LIST_ID!;
 const WEBFLOW_WEBHOOK_SECRET = process.env.WEBFLOW_WEBHOOK_SECRET; // Optional for signature verification
 
+
 // Webflow webhook payload interface
 interface WebflowWebhook {
   triggerType: string;
@@ -135,3 +136,4 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
