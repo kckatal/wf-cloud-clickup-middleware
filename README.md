@@ -18,7 +18,6 @@ This project is a small Next.js middleware app (deployed on Webflow Cloud) that 
 
 - `CLICKUP_API_TOKEN`: Your ClickUp personal token (Authorization header to ClickUp API)
 - `CLICKUP_LIST_ID`: The target ClickUp list ID where tasks will be created
-- Optional: `WEBFLOW_WEBHOOK_SECRET` to enable signature verification (used in production only)
 
 You must configure these in your Webflow Cloud environment. For local development, export them in your shell before running the dev server.
 
